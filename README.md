@@ -10,6 +10,9 @@ A repository containing my Verilog HDL modules, testbenches, and Vivado project 
 
 ## Repository Structure
 * TEST - Logic Gates implementation and testbench.
+* HalfAdder_GateLevel - Half Adder implementation along with testbench using the Gate Level Modelling.
+* HalfAdder_DataFlow - Half Adder implementation along with testbench using the Data Flow Modelling.
+* HalfAdder_Behavioural - Half Adder implementation along with testbench using the Behavioural Modelling.
 
 ## How to Run
 1. Open Vivado.
