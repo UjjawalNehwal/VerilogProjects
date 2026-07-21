@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 22.07.2026 01:36:21
+// Create Date: 22.07.2026 03:17:29
 // Design Name: 
 // Module Name: HalfAdder
 // Project Name: 
@@ -20,14 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HalfAdder (
+module HalfAdder(
     input wire A,
     input wire B,
     output wire Sum,
     output wire Carry
-);
-
-    xor g1 (Sum, A, B);
-    and g2 (Carry, A, B);
-
+    );
+    
+    assign Sum = A^B;
+    assign Carry = A&B;
+    
 endmodule
