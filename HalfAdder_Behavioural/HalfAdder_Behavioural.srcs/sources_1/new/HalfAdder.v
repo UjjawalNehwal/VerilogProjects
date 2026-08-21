@@ -27,7 +27,7 @@ module HalfAdder(
     output reg Carry
     );
     
-    /*Simplest form of representation
+    /*Simplest form of representating
     always @(*) begin
         {Carry, Sum} = A+B;
     end
