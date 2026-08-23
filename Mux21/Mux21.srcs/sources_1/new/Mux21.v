@@ -37,6 +37,6 @@
         endcase
     end
     
-        /*assign Y= Sel ? B : A;*/
+        //assign Y= Sel ? B : A;
     
 endmodule
