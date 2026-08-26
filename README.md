@@ -33,6 +33,8 @@ A repository containing my Verilog HDL modules, testbenches, and Vivado project 
   * Multiply (full `2×WIDTH`-bit product split across `ResultHigh`/`Result`)
   * `Zero` flag, asserted whenever `Result` is all-zero — mirrors how real CPUs reuse ALU subtraction for equality/branch checks.
 * **Comparator4Bit** - 4-bit Magnitude Comparator using Verilog's relational operators (`>`, `==`, `<`) to produce mutually exclusive `GT`, `EQ`, `LT` outputs.
+* **ParityGenerator** - Computes an even-parity bit for 4-bit data using the reduction XOR operator (`ParityBit = ^Data`), which evaluates to 1 whenever the data contains an odd number of 1s.
+* **ParityChecker** - Verifies received data + parity bit for corruption by recomputing reduction XOR over the concatenated pair (`Error = ^{Data, ParityBit}`); flags an error whenever an odd number of bits (data or parity) have been corrupted. Cannot detect an even number of simultaneous bit-flips, a known limitation of simple parity schemes.
 
 ## How to Run
 1. Open Vivado.
