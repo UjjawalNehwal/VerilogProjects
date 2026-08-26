@@ -35,6 +35,9 @@ A repository containing my Verilog HDL modules, testbenches, and Vivado project 
 * **Comparator4Bit** - 4-bit Magnitude Comparator using Verilog's relational operators (`>`, `==`, `<`) to produce mutually exclusive `GT`, `EQ`, `LT` outputs.
 * **ParityGenerator** - Computes an even-parity bit for 4-bit data using the reduction XOR operator (`ParityBit = ^Data`), which evaluates to 1 whenever the data contains an odd number of 1s.
 * **ParityChecker** - Verifies received data + parity bit for corruption by recomputing reduction XOR over the concatenated pair (`Error = ^{Data, ParityBit}`); flags an error whenever an odd number of bits (data or parity) have been corrupted. Cannot detect an even number of simultaneous bit-flips, a known limitation of simple parity schemes.
+* **GrayCodeCombinedTB** - A single testbench instantiating both `Binary2Gray` and `Gray2Binary` together, feeding the first module's `Gray` output directly into the second module's input, to verify the round trip (`Bin -> Gray -> BinBack`) always returns the original value.
+
+> **Note on simulating multiple testbenches:** Vivado only simulates one "top" module per run. If a project contains more than one standalone testbench (e.g. `Binary2GrayTB` and `Gray2BinaryTB`), right-click the desired testbench in the **Sources -> Simulation Sources** panel and choose **Set as Top** before running simulation (F11), or the wrong (or previously-set) testbench may run silently instead.
 
 ## How to Run
 1. Open Vivado.
