@@ -28,7 +28,6 @@ module SyncDFF(
     );
     
      initial Q=1'b0;
-     
     always @(posedge Clk) begin
         if (Rst)
             Q <= 1'b0;
