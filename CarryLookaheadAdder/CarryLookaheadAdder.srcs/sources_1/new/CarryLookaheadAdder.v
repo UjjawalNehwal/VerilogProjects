@@ -34,6 +34,7 @@ module CarryLookaheadAdder(
     assign G = A & B;
     assign P = A ^ B;
     
+    //Basic Formula exists
     assign C1 = G[0] | (P[0] & Cin);
     assign C2 = G[1] | (P[1] & G[0]) | (P[1] & P[0] & Cin);
     assign C3 = G[2] | (P[2] & G[1]) | (P[2] & P[1] & G[0]) | (P[2] & P[1] & P[0] & Cin);
